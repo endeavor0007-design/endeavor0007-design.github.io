@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>紙図面をCADに｜写し間違いの確認表つき（開発中・事前登録）</title>
+<meta name="description" content="紙の図面・青焼き・手描きの図面を、写真やスキャンからCAD（DXF/DWG・PDF）に描き直します。元の図面と重ねて照らした「写し間違いの確認表」つき（開発中）。A3 1枚12,000円前後〜（予定）・無料お試しの事前登録を受付中。">
+<link rel="canonical" href="https://cocreturn.com/zumen-cad/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="紙図面をCADに｜写し間違いの確認表つき（開発中・事前登録）">
+<meta property="og:description" content="紙の図面・青焼き・手描きの図面を、写真やスキャンからCAD（DXF/DWG・PDF）に描き直します。元の図面と重ねて照らした「写し間違いの確認表」つき（開発中）。A3 1枚12,000円前後〜（予定）・無料お試しの事前登録を受付中。">
+<meta property="og:url" content="https://cocreturn.com/zumen-cad/">
+<meta property="og:image" content="https://cocreturn.com/zumen-cad/img/ex5_hand_check.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "紙図面のCAD化（写し間違いの確認表つき）", "url": "https://cocreturn.com/zumen-cad/", "serviceType": "紙図面・青焼き・手描き図面のCADデータ化（DXF/DWG・PDF）", "description": "紙の図面・青焼き・手描きの図面を、写真やスキャンからCAD（DXF/DWG・PDF）に描き直します。元の図面と重ねて照らした「写し間違いの確認表」つき（開発中）。A3 1枚12,000円前後〜（予定）・無料お試しの事前登録を受付中。", "areaServed": "JP", "inLanguage": "ja", "provider": {"@type": "Organization", "name": "共創還元（COCRETURN）", "alternateName": "図面デジタル化窓口", "url": "https://cocreturn.com/", "email": "info@cocreturn.com"}}]}</script>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;font-size:17px;line-height:1.75;color:#222;background:#f5f5f2}
+.demo{position:sticky;top:0;z-index:9;background:#b45309;color:#fff;text-align:center;font-weight:bold;font-size:14px;padding:6px 8px}
+header{background:#2f3e46;color:#fff;padding:28px 16px}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+header .wrap{padding:0}
+h1{font-size:24px;line-height:1.4;margin:0 0 10px}
+h2{font-size:21px;margin:0 0 12px;border-left:6px solid #c2410c;padding-left:10px;line-height:1.4}
+section{background:#fff;margin:14px 0;padding:20px 0;border-radius:10px}
+.btn{display:block;width:100%;min-height:52px;font-size:18px;font-weight:bold;border:0;border-radius:8px;background:#c2410c;color:#fff;padding:12px;text-align:center;text-decoration:none}
+.note{font-size:14px;color:#555}
+.warn{background:#fff7e6;border:1px solid #f0c36d;border-radius:8px;padding:10px 12px;font-size:16px}
+input,select{width:100%;min-height:48px;font-size:17px;padding:8px 10px;border:1px solid #999;border-radius:8px;background:#fff;font-family:inherit}
+label{display:block;font-weight:bold;margin:14px 0 4px}
+.radio label{display:flex;align-items:center;gap:10px;font-weight:normal;min-height:44px;margin:0}
+.radio input{width:24px;min-height:24px}
+.step{border-left:4px solid #9ab;margin:12px 0;padding:4px 0 4px 12px}
+table{width:100%;border-collapse:collapse;font-size:16px}
+td,th{border-bottom:1px solid #ddd;padding:8px 4px;text-align:left;vertical-align:top}
+th{background:#f0eee8}
+.sample{border:2px dashed #c2410c;border-radius:8px;padding:8px;position:relative}
+.sample .badge{position:absolute;right:6px;top:6px;background:#c2410c;color:#fff;font-size:13px;font-weight:bold;padding:0 8px;border-radius:4px}
+svg{width:100%;height:auto;display:block;background:#fcfcfa}
+.pin{display:inline-block;min-width:26px;text-align:center;color:#fff;background:#c0392b;border-radius:50%;font-weight:bold;font-size:15px;margin-right:4px}
+footer{padding:20px 16px;font-size:14px;color:#555;text-align:center}
+.tpl{user-select:all;-webkit-user-select:all;background:#fff;border:1px solid #ccc;border-radius:6px;padding:12px;font-size:15px;line-height:1.7;word-break:break-all}
+</style>
+</head>
+<body>
+<div class="demo">開発中・事前登録受付中（本ページは完成形のイメージ・見本データです）</div>
+<header><div class="wrap">
+<h1>古い紙図面を、CADに。<br>元の図面との「写し間違いの確認表」つきで。</h1>
+<p style="margin:0">青焼き・手描き・コピーの図面の写真やスキャンを送ると、CAD（DXF/DWG・PDF）に描き直してお返しします（手描きは仕上がりに差が出る場合があります）。<br>CADにした後、元の図面と違う所に<b>赤い印</b>を付け、見直しの助けになることを目指しています（開発中・手描きは検証中）。<br><span style="font-size:15px">価格の目安：A3 1枚 12,000円前後〜（税込・予定）／まとめてのご依頼は割引を予定（内容は未定）</span><br><b>無料お試し（先着3社）：お手持ちの図面1枚を実際にCAD化し、確認表まで付けてお返しします。</b></p>
+</div></header>
+
+<div class="wrap">
+
+<section><div class="wrap">
+<h2>こんな困りごとはありませんか</h2>
+<ul>
+<li>古い紙図面しかなく、改修・再発注のたびに描き直している</li>
+<li>図面のCAD化を外注したが、できた図面のチェックに時間がかかる</li>
+</ul>
+<p>対象：紙図面・青焼き・手描き図面をお持ちの町工場、設備保全、設計事務所。</p>
+</div></section>
+
+<section><div class="wrap">
+<h2>ご利用の流れ</h2>
+<div class="step"><b>1. 送る</b><br>図面の写真かスキャンを送ります。</div>
+<div class="step"><b>2. 描き直す</b><br>CAD（DXF/DWG・PDF）に描き直します。</div>
+<div class="step"><b>3. 納品</b><br>「元の図面との重ね合わせ写し間違いの確認表」をつけてお届けします。</div>
+<table>
+<tr><th>今できること（見本で試験済み）</th><th>検証中のこと</th></tr>
+<tr><td>印刷図面の見本（傾き0.7度）で、線の欠落・穴のずれ・寸法の数字の違いを位置つきで照合。手描き風・青焼き風の見本（縮尺0.93倍・傾き1.2度）で、穴のずれ・寸法の数字の違いを照合</td><td>本物の手描き・青焼きの図面・斜めの数字・紙の波打ちでの照合</td></tr>
+</table>
+<p class="note">写し間違いの確認表は開発中の機能で、精度は保証しません。機械的に照合したうえで、人も確認します。</p>
+</div></section>
+
+<section><div class="wrap">
+<h2>写し間違いの確認表のイメージ（納品の形）</h2>
+<div class="sample">
+<span class="badge">見本</span>
+<svg viewBox="0 0 320 190" role="img" aria-label="写し間違いの確認表の見本図">
+<rect x="40" y="30" width="200" height="120" fill="none" stroke="#2f3e46" stroke-width="2"/>
+<circle cx="80" cy="70" r="12" fill="none" stroke="#2f3e46" stroke-width="2"/>
+<circle cx="200" cy="110" r="12" fill="none" stroke="#2f3e46" stroke-width="2"/>
+<circle cx="206" cy="113" r="12" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="4 3"/>
+<line x1="240" y1="30" x2="240" y2="150" stroke="#2f3e46" stroke-width="2"/>
+<line x1="120" y1="150" x2="170" y2="150" stroke="#c0392b" stroke-width="4" stroke-dasharray="3 3" opacity=".6"/>
+<text x="110" y="172" font-size="12" fill="#444">寸法 120</text>
+<text x="250" y="95" font-size="12" fill="#c0392b">128?</text>
+<circle cx="145" cy="150" r="14" fill="none" stroke="#c0392b" stroke-width="2"/>
+<circle cx="203" cy="111" r="20" fill="none" stroke="#c0392b" stroke-width="2"/>
+<circle cx="262" cy="90" r="14" fill="none" stroke="#c0392b" stroke-width="2"/>
+<text x="136" y="134" font-size="13" font-weight="bold" fill="#c0392b">1</text>
+<text x="190" y="84" font-size="13" font-weight="bold" fill="#c0392b">2</text>
+<text x="256" y="68" font-size="13" font-weight="bold" fill="#c0392b">3</text>
+</svg>
+<p class="note" style="margin:4px 0">黒＝CAD図面／青の点線＝元の図面（重ね合わせ）／赤丸＝要確認箇所（見本）</p>
+<table>
+<tr><th>No.</th><th>種別</th><th>位置</th><th>状態</th></tr>
+<tr><td><span class="pin">1</span></td><td>線の欠落</td><td>下辺 X120〜170（例）</td><td>人が確認</td></tr>
+<tr><td><span class="pin">2</span></td><td>穴のずれ</td><td>右下の穴 約0.8mm（例）</td><td>人が確認</td></tr>
+<tr><td><span class="pin">3</span></td><td>寸法の数字</td><td>右辺「120」→「128」（例）</td><td>人が確認</td></tr>
+</table>
+</div>
+<p class="note">上は見本のイメージで、実際の図面・数値ではありません。</p>
+</div></section>
+
+<section><div class="wrap">
+<h2>実例：見本の図面で試した結果</h2>
+<p>当方で作った見本の図面（120×60の板・穴3つ）を紙をスキャンしたように傾け・かすれさせた物と、同じ図面にわざと間違いを3つ入れたCAD図面（プログラムで作成。スキャンからの描き直しではありません）を用意し、照合しました。照合のプログラムは実際に動かした物で、③は出力に番号を付けた物です。</p>
+<div class="step"><b>① 元の図面（スキャンした想定）</b><br>0.7度の傾き・かすれ・汚れあり。
+<img src="img/ex1_scan.jpg" alt="スキャンした想定の元の図面。横120・縦60の板に直径12の穴が3つ" width="1000" height="700" loading="lazy" style="width:100%;height:auto;border:1px solid #ddd;margin-top:6px"></div>
+<div class="step"><b>② 間違いを3つ入れたCAD図面（見本用に作成）</b><br>真ん中の穴を3mm右へ・右の穴を描き忘れ・縦の寸法を「60.0」→「80.0」。
+<img src="img/ex2_cad.png" alt="間違いを入れて描き直したCAD図面" width="1000" height="700" loading="lazy" style="width:100%;height:auto;border:1px solid #ddd;margin-top:6px"></div>
+<div class="step"><b>③ 写し間違いの確認表（自動の照合の出力）</b><br>傾きを自動で直して重ね、違う所を赤で囲みます。青＝元の図面／黒＝CAD図面。
+<img src="img/ex3_check.png" alt="照合の結果。違う3か所が赤で示されている" width="1000" height="700" loading="lazy" style="width:100%;height:auto;border:1px solid #ddd;margin-top:6px">
+<table>
+<tr><th>No.</th><th>見つかった違い</th><th>入れた間違い</th></tr>
+<tr><td><span class="pin">1</span></td><td>真ん中の穴の位置が違う</td><td>3mm右へずらした</td></tr>
+<tr><td><span class="pin">2</span></td><td>元の図面にある穴がCADにない</td><td>右の穴を描き忘れた</td></tr>
+<tr><td><span class="pin">3</span></td><td>寸法の数字：元の図面は「60.0」、CADは「80.0」（画像はCAD側の数字を表示）</td><td>数字を書き換えた</td></tr>
+</table></div>
+<p class="note">入れた3つは見つかりました。間違いのないCAD図面と照合したときは、赤の印は0でした。ただしこれは当方で作った印刷文字の見本1枚の結果です。</p>
+<h3 style="font-size:18px;margin:22px 0 6px">実例2：手描き風・青焼き風の見本</h3>
+<p>同じ板を、線のゆれ・手書き風の字体の数字・青焼きの色むらでプログラムで描いた見本を作り、さらに<b>縮尺を0.93倍</b>・<b>1.2度の傾き</b>にしてスキャンした想定にしました（これも当方で作った見本で、本物の手描き図面ではありません）。</p>
+<div class="step"><b>① 元の図面（手描き風・青焼き風の見本）</b>
+<img src="img/ex4_hand.jpg" alt="青焼き風の手描きの元の図面の見本。数字は手書き風" width="1000" height="700" loading="lazy" style="width:100%;height:auto;border:1px solid #ddd;margin-top:6px"></div>
+<div class="step"><b>② 間違いを2つ入れたCAD図面</b><br>右の穴を3mm右へ・縦の寸法を「60.0」→「66.0」（数字の似た書き違い）。</div>
+<div class="step"><b>③ 写し間違いの確認表（自動の照合の出力）</b><br>縮尺と傾きを自動で直して重ねています（倍率0.932・回転1.3度と推定）。
+<img src="img/ex5_hand_check.png" alt="手描き風の見本との照合の結果。違う2か所が赤で示されている" width="1000" height="700" loading="lazy" style="width:100%;height:auto;border:1px solid #ddd;margin-top:6px">
+<table>
+<tr><th>見つかった違い</th><th>入れた間違い</th></tr>
+<tr><td>右の穴の位置が違う（赤の四角）</td><td>3mm右へずらした</td></tr>
+<tr><td>寸法の数字：元の図面は手書きの「60.0」、CADは「66.0」（赤の「!」）</td><td>数字を書き換えた</td></tr>
+</table></div>
+<p class="note">入れた2つは見つかり、間違いのないCAD図面との照合では赤の印は0でした。分かった限界：手描きの線はゆれるため、照合の許容幅を約1.2mmに広げています。これより小さいずれは見分けられません（印刷の図面より粗くなります）。許容幅をもっと狭くすると、正しい図面でも線のゆれを違いとして拾いました（この見本では寸法線に1か所）。手書きの数字は読み違えることがあり、読めない数字は人が確かめます。どちらも見本の結果で、お客様の実際の図面での精度は、無料お試しで確かめます。</p>
+</div></section>
+
+<section><div class="wrap">
+<h2>価格の目安（開発中のため予定）</h2>
+<table>
+<tr><th>サイズ</th><th>予定価格（税込）</th></tr>
+<tr><td>A3</td><td>12,000円前後〜</td></tr>
+<tr><td>A1</td><td>要見積り</td></tr>
+</table>
+<p class="note">総額の例（税込・割引前）：A3を30枚なら36万円前後〜。急ぎの数枚だけ、からでも頼めます。</p>
+<p class="note">まとめてのご依頼（例：30枚・100枚以上）は、枚数に応じた割引を予定しています（率・条件は未定）。概算は事前登録の方に受付開始時にお知らせします。図面の複雑さで変わります。納期の目安は、サービス内容の確定後にご案内します。販売開始時に特定商取引法の表記を掲載します。</p>
+</div></section>
+
+<section id="signup"><div class="wrap">
+<h2>事前登録（無料お試し）</h2>
+<p>無料お試しは先着3社・1社1枚（A3以下）の予定です。条件の詳細は受付開始時に案内します。納期も受付開始時に案内します。</p>
+<p>下のボタンでメールが開きます。枚数と大きさなどを選んで書くだけ（約1分）で、そのまま送ってください。</p>
+<p style="margin-top:16px"><a class="btn" href="mailto:info@cocreturn.com?subject=%E5%9B%B3%E9%9D%A2%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E5%8C%96%20%E4%BA%8B%E5%89%8D%E7%99%BB%E9%8C%B2&body=%E3%80%90%E5%9B%B3%E9%9D%A2%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E5%8C%96%20%E4%BA%8B%E5%89%8D%E7%99%BB%E9%8C%B2%E3%80%91%0A%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%88%E4%BB%BB%E6%84%8F%EF%BC%89%EF%BC%9A%0A%E5%9B%B3%E9%9D%A2%E3%81%AE%E6%9E%9A%E6%95%B0%E3%81%AE%E7%9B%AE%E5%AE%89%EF%BC%881%E3%80%9C5%E6%9E%9A%EF%BC%8F6%E3%80%9C30%E6%9E%9A%EF%BC%8F31%E3%80%9C100%E6%9E%9A%EF%BC%8F101%E6%9E%9A%E4%BB%A5%E4%B8%8A%EF%BC%89%EF%BC%9A%0A%E4%B8%BB%E3%81%AA%E3%82%B5%E3%82%A4%E3%82%BA%EF%BC%88A4%EF%BC%8FA3%EF%BC%8FA2%EF%BC%8FA1%EF%BC%8FA0%E4%BB%A5%E4%B8%8A%EF%BC%8F%E3%81%84%E3%82%8D%E3%81%84%E3%82%8D%EF%BC%89%EF%BC%9A%0A%E7%94%A8%E9%80%94%EF%BC%88%E6%94%B9%E4%BF%AE%EF%BC%8F%E5%86%8D%E7%99%BA%E6%B3%A8%E3%83%BB%E8%A3%BD%E4%BD%9C%EF%BC%8F%E4%BF%9D%E5%85%A8%E3%83%BB%E4%BF%9D%E7%AE%A1%EF%BC%8F%E3%81%9D%E3%81%AE%E4%BB%96%EF%BC%89%EF%BC%9A%0A%E6%9C%89%E6%96%99%E3%81%A7%E3%82%82%E4%BD%BF%E3%81%84%E3%81%9F%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%88%E3%81%AF%E3%81%84%EF%BC%8F%E5%86%85%E5%AE%B9%E6%AC%A1%E7%AC%AC%EF%BC%8F%E3%81%84%E3%81%84%E3%81%88%EF%BC%89%EF%BC%9A%0A%E3%81%B2%E3%81%A8%E3%81%93%E3%81%A8%EF%BC%88%E4%BB%BB%E6%84%8F%EF%BC%89%EF%BC%9A%0A%E2%80%BB%E3%81%93%E3%81%AE%E6%AE%B5%E9%9A%8E%E3%81%A7%E3%81%AF%E5%9B%B3%E9%9D%A2%E3%82%92%E6%B7%BB%E4%BB%98%E3%81%97%E3%81%AA%E3%81%84%E3%81%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82">メールで事前登録する（無料）</a></p>
+<p class="note">メールが開かないときは、<strong>info@cocreturn.com</strong> あてに、件名「図面デジタル化 事前登録」で次の内容を送ってください。</p>
+<div class="tpl" id="tpl">【図面デジタル化 事前登録】<br>
+会社名（任意）：<br>
+図面の枚数の目安（1〜5枚／6〜30枚／31〜100枚／101枚以上）：<br>
+主なサイズ（A4／A3／A2／A1／A0以上／いろいろ）：<br>
+用途（改修／再発注・製作／保全・保管／その他）：<br>
+有料でも使いたいですか（はい／内容次第／いいえ）：<br>
+ひとこと（任意）：<br>
+※この段階では図面を添付しないでください。</div>
+<p class="note">受付の確認は2営業日以内を目安にメールでご連絡します（混雑時は遅れる場合があります）。登録の段階では図面を添付しないでください。いただいた内容は案内目的のみに使います。詳しくは<a href="privacy.html">プライバシーポリシー</a>。</p>
+</div></section>
+
+<section><div class="wrap">
+<h2>ご注意</h2>
+<ul>
+<li>登録段階では機密図面を送らないでください。受付開始後、必要なら秘密保持の取り決めを結びます。</li>
+<li>建築確認などの申請用図面は対象外です。</li>
+<li>著作権・守秘義務のある図面は、権利者の許可がある物だけお預かりします。</li>
+<li>照合は補助です。最終確認は人（お客様と当方）で行います。</li>
+</ul>
+</div></section>
+</div>
+
+<footer>運営：共創還元（図面デジタル化窓口・個人運営）／<a href="mailto:info@cocreturn.com">info@cocreturn.com</a><br><a href="privacy.html">プライバシーポリシー</a></footer>
+</body>
+</html>

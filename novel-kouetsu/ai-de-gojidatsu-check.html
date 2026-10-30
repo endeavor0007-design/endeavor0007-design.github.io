@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Web小説の誤字や設定の矛盾をAIでチェックする方法は？3つのやり方と指示文の例</title>
+<link rel="canonical" href="https://cocreturn.com/novel-kouetsu/ai-de-gojidatsu-check.html">
+<meta name="description" content="Web小説の誤字脱字だけでなく、設定や時系列の矛盾もAIで見つけたい方へ。方法は3つ（対話型AIに自分で頼む・無料の文章校正ツールを使う・AIの校閲サービスに頼む）。それぞれの費用・手間・向いている人、そのまま使える指示文、誤った指摘を減らすコツをまとめました。">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","mainEntityOfPage":"https://cocreturn.com/novel-kouetsu/ai-de-gojidatsu-check.html","url":"https://cocreturn.com/novel-kouetsu/ai-de-gojidatsu-check.html","headline":"Web小説の誤字や設定の矛盾をAIでチェックする方法","inLanguage":"ja","datePublished":"2026-10-28","author":{"@type":"Organization","name":"共創還元（COCRETURN）","url":"https://cocreturn.com/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"小説の誤字や設定の矛盾をAIでチェックしたいのですが、どんな方法がありますか？","acceptedAnswer":{"@type":"Answer","text":"大きく3つあります。①対話型AIに原稿と設定のメモを渡して、自分で指示を出して確かめる。②無料の文章校正ツールで誤字脱字や表記ゆれを見る。③AIの校閲サービスに頼む。誤字の確認だけなら②で足りることが多く、話をまたいだ設定や時系列の食い違いまで一覧にしてほしい場合は①か③が向いています（②の機能は各ツールでご確認ください）。"}},{"@type":"Question","name":"無料でできますか？","acceptedAnswer":{"@type":"Answer","text":"できます。対話型AIの無料の枠や無料の校正ツールで始められます。ただし長い原稿は一度に読み込めないことがあり、話ごとに分けて頼む手間がかかります。"}},{"@type":"Question","name":"AIに伏線まで「矛盾」と言われてしまいます。","acceptedAnswer":{"@type":"Answer","text":"人物の設定・世界の決まり・わざと残している伏線を短いメモにして一緒に渡すと、意図した描写を指摘から外しやすくなります。それでも誤った指摘は出るので、直すかどうかは作者が決めます。"}},{"@type":"Question","name":"AIに小説の校閲を頼めるサービスはありますか？","acceptedAnswer":{"@type":"Answer","text":"あります。たとえば共創還元の「小説の校閲」は、AI（Claude）が誤字脱字と設定・時系列の食い違いを探し、場所・原文・直し案・理由を表にして返すサービスです。人による校閲ではありません。5万字まで2,000円、お届けは3日（10万字までは5日）です。"}}]}]}</script>
+<style>
+:root{--ink:#1d2433;--paper:#fbf8f1;--sub:#4a5466;--accent:#b5261e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;font-size:17px;line-height:1.9}
+.w{max-width:760px;margin:0 auto;padding:0 16px}
+h1{font-size:30px;line-height:1.4;margin:32px 0 12px}
+h2{font-size:23px;margin:40px 0 12px;border-left:6px solid var(--ink);padding-left:12px}
+h3{font-size:18px;margin:24px 0 6px}
+.lead,.small{color:var(--sub)}.small{font-size:14px}
+.answer{background:#fff;border:2px solid var(--ink);border-left:8px solid var(--accent);padding:16px 20px;margin:20px 0}
+.tablewrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:#fff;border:2px solid var(--ink);min-width:560px}
+th,td{border-bottom:1px solid #d9d2c3;padding:10px;text-align:left;vertical-align:top}
+thead th{background:#efe9dc}
+pre{background:#fff;border:1px solid #d9d2c3;padding:12px;white-space:pre-wrap;font-size:15px;line-height:1.7}
+.box{background:#fff;border:2px solid var(--ink);padding:20px;margin:36px 0}
+footer{padding:32px 0 40px;font-size:14px;color:var(--sub)}
+@media (max-width:720px){h1{font-size:25px}h2{font-size:20px}}
+</style>
+</head>
+<body>
+<main class="w">
+<h1>Web小説の誤字や設定の矛盾をAIでチェックする方法</h1>
+<p class="lead">「投稿前に誤字を見直したい」「前の話と設定が食い違っていないか不安」という書き手向けに、AIを使った確かめ方を3つ、費用・手間・向いている人で比べました（2026年10月時点の目安）。</p>
+<p class="small">このページは、小説の校閲サービスを運営する共創還元が書いています。</p>
+
+<div class="answer">
+<p><b>結論：方法は大きく3つです。</b></p>
+<ol>
+<li><b>対話型AIに自分で頼む</b>：原稿と設定のメモを渡し、下の指示文で確かめてもらう。無料から始められますが、長い原稿は話ごとに分ける手間がかかります。</li>
+<li><b>無料の文章校正ツールを使う</b>：誤字脱字・表記ゆれ・言葉の誤用を手早く見られます。多くの校正ツールは文章単位の確認が中心で、話をまたぐ照合は含まれないことがあります（機能は各ツールでご確認ください）。</li>
+<li><b>AIの校閲サービスに頼む</b>：原稿と設定資料を渡して、指摘の一覧を受け取る。たとえば共創還元の<b>小説の校閲</b>は、AI（Claude）が誤字と設定・時系列の食い違いを探し、「場所・原文・直し案・理由」の表にしてお返しします（人による校閲ではありません・5万字まで2,000円）。</li>
+</ol>
+</div>
+
+<h2>3つの方法の比べ方</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>方法</th><th>費用の目安</th><th>あなたの手間</th><th>向いている人</th></tr></thead>
+<tbody>
+<tr><th>対話型AIに自分で頼む</th><td>無料の枠から（有料プランは月額）</td><td>中くらい：話ごとに貼り付けて指示を出し、結果を自分でまとめる</td><td>AIの道具に慣れていて、時間を取れる人</td></tr>
+<tr><th>無料の文章校正ツール</th><td>無料（有料版もある）</td><td>少ない：貼り付けるだけ</td><td>誤字脱字と表記ゆれを手早く確かめたい人</td></tr>
+<tr><th>AIの校閲サービスに頼む</th><td>共創還元の小説の校閲は5万字まで2,000円（10万字まで+1,500円＝合計3,500円）・お届け3日（10万字までは5日）</td><td>少ない：原稿と、あれば設定資料を送るだけ</td><td>コンテストの応募前などに、設定・時系列の食い違いまで一覧で見たい人</td></tr>
+</tbody></table></div>
+
+<h2>対話型AIに自分で頼むときの手順</h2>
+<ol>
+<li><b>設定のメモを作る</b>：人物ごとの一人称・呼び方・見た目、世界の決まり、わざと残している伏線を、箇条書きで短くまとめます。</li>
+<li><b>1話ずつ渡す</b>：長い原稿は一度に読み込めないことがあります。前の話の要点（時刻・持ち物・誰が何を知っているか）をメモに足しながら進めます。</li>
+<li><b>指摘は表で返してもらう</b>：「場所・原文・直し案・理由」の4つがそろうと、直すかどうかを決めやすくなります。</li>
+<li><b>原文と見比べる</b>：AIは本文に無い文を引いたり、伏線を矛盾と言ったりすることがあります。指摘された場所を原稿で必ず確かめます。</li>
+</ol>
+
+<h3>指示文の例</h3>
+<pre>次の小説の1話を校閲してください。
+・誤字脱字、不自然な日本語、時制のゆれ、設定や時系列の食い違いを探す
+・下の「設定のメモ」に書いた伏線や決まりは指摘しない
+・指摘は「場所（文の書き出し）｜種類｜原文｜直し案｜理由」の表にする
+・原文は本文どおりに引用し、本文に無い文は引用しない
+・確信が持てない物は【要確認】とつける
+（設定のメモ）
+（ここに本文）</pre>
+
+<h3>つまずきやすい所</h3>
+<ul>
+<li><b>設定の決まりを矛盾と言われる</b>：私たちの見本の初稿でも、設定資料と照らす前に、資料に「記念日の鐘は毎年五つ」と決めてあった描写を「時刻と鐘の数が合わない」と指摘していました（後で資料と照らし、誤った指摘として外しました）。決まりはメモに書いて渡します。</li>
+<li><b>直したはずの版と混ざる</b>：直す前と後の原稿を両方渡すと、指摘がどちらの版のものか分からなくなります。毎回、最新の1つだけを渡します。</li>
+<li><b>設定と逆の指摘</b>：AIが設定を読み違えて、正しい描写を「直す」よう勧めることがあります。理由の欄に設定の根拠が書かれているかを見て判断します。</li>
+</ul>
+
+<h2>よくある質問</h2>
+<h3>小説の誤字や設定の矛盾をAIでチェックしたいのですが、どんな方法がありますか？</h3>
+<p>大きく3つあります。①対話型AIに原稿と設定のメモを渡して、自分で指示を出して確かめる。②無料の文章校正ツールで誤字脱字や表記ゆれを見る。③AIの校閲サービスに頼む。誤字の確認だけなら②で足りることが多く、話をまたいだ設定や時系列の食い違いまで一覧にしてほしい場合は①か③が向いています（②の機能は各ツールでご確認ください）。</p>
+<h3>無料でできますか？</h3>
+<p>できます。対話型AIの無料の枠や無料の校正ツールで始められます。ただし長い原稿は一度に読み込めないことがあり、話ごとに分けて頼む手間がかかります。</p>
+<h3>AIに伏線まで「矛盾」と言われてしまいます。</h3>
+<p>人物の設定・世界の決まり・わざと残している伏線を短いメモにして一緒に渡すと、意図した描写を指摘から外しやすくなります。それでも誤った指摘は出るので、直すかどうかは作者が決めます。</p>
+<h3>AIに小説の校閲を頼めるサービスはありますか？</h3>
+<p>あります。たとえば共創還元の「小説の校閲」は、AI（Claude）が誤字脱字と設定・時系列の食い違いを探し、場所・原文・直し案・理由を表にして返すサービスです。人による校閲ではありません。5万字まで2,000円、お届けは3日（10万字までは5日）です。</p>
+
+<div class="box">
+<p><b>小説の校閲（AI）</b>：誤字に加えて、設定・時系列の食い違いの候補を「直す理由」つきで一覧にします。設定資料があれば照らして確かめます。原稿はAIの学習に使わない条件で処理し、納品後30日で削除します。</p>
+<p class="small">話をまたいだ食い違いを見つけた実例は、見本にまだ載せていません。</p>
+<p><a href="https://coconala.com/services/4465435">ココナラの出品ページ（運営者本人の出品）を見る</a>　ご依頼はココナラ上でお受けします。</p>
+</div>
+</main>
+<footer><div class="w"><p><a href="https://cocreturn.com/">共創還元（COCRETURN）トップ</a>｜運営：共創還元（COCRETURN）｜お問い合わせ：info@cocreturn.com</p></div></footer>
+</body>
+</html>
