@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>おてがみ往復便｜親に手紙を送ると、手書きの返事が届く（無料お試しキットあり）</title>
+<meta name="description" content="遠くの親に手紙を送り、返信用封筒つきで手書きの返事を受け取る「おてがみ往復便」（開発中）。印刷して使える無料のお試しキットは、メールアドレス不要・費用は切手代だけです。">
+<link rel="canonical" href="https://cocreturn.com/otegami/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Shippori+Mincho:wght@500;700&family=Yomogi&display=swap" rel="stylesheet">
+<style>
+/* サービス名は見出し・ヘッダー・フッターの .svc に入れてあります（差し替えは検索置換1回：おてがみ往復便） */
+:root{
+  --paper:#faf5ea; --paper2:#f3ead7; --ink:#2f2a24; --sub:#5b5247;
+  --accent:#a8472f; --accent-d:#8a3722; --green:#3f6b52; --line:#d9cdb3; --blue:#9fb8d6;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
+  --hand:"Yomogi","Zen Maru Gothic",cursive;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.9;
+  background-image:radial-gradient(rgba(150,120,70,.06) 1px,transparent 1px);background-size:6px 6px}
+a{color:var(--accent-d)}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+header.top{padding:14px 0;border-bottom:1px solid var(--line);background:rgba(250,245,234,.95)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.logo{font-family:var(--serif);font-weight:700;font-size:20px;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink)}
+.logo svg{width:30px;height:22px}
+.badge{font-size:13px;background:var(--paper2);border:1px solid var(--line);border-radius:99px;padding:2px 12px;white-space:nowrap}
+h1,h2,h3{font-family:var(--serif);line-height:1.5;margin:0}
+section{padding:56px 0;position:relative}
+section h2{font-size:25px;text-align:center;margin-bottom:10px}
+section h2::after{content:"";display:block;width:56px;height:3px;background:var(--accent);margin:12px auto 0;border-radius:2px;opacity:.7}
+.lead{text-align:center;color:var(--sub);margin:0 auto 30px;max-width:640px}
+/* hero */
+.hero{padding:36px 0 48px}
+.hero .grid{display:grid;gap:30px}
+.eyebrow{display:inline-block;font-size:14px;color:var(--green);border:1px solid var(--green);border-radius:99px;padding:1px 14px;margin-bottom:12px;background:#fff8}
+.hero h1{font-size:29px;margin-bottom:14px}
+.hero p{margin:0 0 14px}
+.price-row{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.price{background:#fffdf7;border:1.5px solid var(--line);border-radius:12px;padding:10px 16px;flex:1 1 150px}
+.price b{font-family:var(--serif);font-size:26px;color:var(--accent-d)}
+.price small{display:block;color:var(--sub);font-size:14px;line-height:1.5}
+.btn{display:block;width:100%;text-align:center;background:var(--accent);color:#fff;font-family:var(--sans);font-weight:700;font-size:19px;
+  border:0;border-radius:12px;padding:16px 20px;text-decoration:none;cursor:pointer;box-shadow:0 3px 0 var(--accent-d);min-height:56px}
+.btn:hover{background:var(--accent-d)}
+.note{font-size:14px;color:var(--sub);line-height:1.7;margin-top:8px}
+.status{background:#fff8e3;border:1px solid #e2cf93;border-radius:10px;padding:10px 14px;font-size:15px;line-height:1.7;margin-bottom:16px}
+.ph{display:inline-block}
+.hero h1{word-break:auto-phrase;line-break:strict}
+.btn2{display:inline-block;margin-top:14px;font-size:16px;color:var(--accent-d);font-weight:700}
+.addrline{background:#fffdf7;border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:15px;line-height:1.7;margin:0 0 14px}
+.kitbox{max-width:760px;margin:0 auto}
+.kitlist{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:12px}
+.kitlist li{background:#fffdf7;border:1.5px solid var(--line);border-radius:14px;padding:14px 16px 14px 60px;position:relative;line-height:1.7}
+.kitlist li .num{position:absolute;left:14px;top:14px;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font-family:var(--serif);font-weight:700;display:grid;place-items:center}
+.kitlist b{font-family:var(--serif);font-size:18px}
+.ptable{width:100%;border-collapse:collapse;background:#fffdf7;max-width:760px;margin:0 auto;font-size:16px;line-height:1.6}
+.ptable th,.ptable td{border:1.5px solid var(--line);padding:12px 10px;text-align:center}
+.ptable th{background:var(--paper2);font-family:var(--serif)}
+.ptable td:first-child{text-align:left}
+.ptable td b{font-family:var(--serif);font-size:21px;color:var(--accent-d)}
+.ptable small{display:block;color:var(--sub);font-size:13.5px;line-height:1.55}
+.intent summary{font-size:16px;font-weight:700;min-height:48px;padding:12px 44px 12px 14px}
+.intent .radio{margin:0 14px 8px}
+@media(max-width:380px){.hero h1{font-size:25px}.ptable{font-size:14.5px}.ptable td b{font-size:18px}}
+/* letter visual */
+.stage{position:relative;height:330px;max-width:420px;margin:0 auto;width:100%}
+.env{position:absolute;left:4%;bottom:6px;width:86%;height:200px;background:#efe3c8;border-radius:6px;box-shadow:0 10px 22px rgba(80,60,30,.22);
+  background-image:linear-gradient(135deg,transparent 49.5%,#d8c9a6 50%,transparent 50.6%),linear-gradient(225deg,transparent 49.5%,#d8c9a6 50%,transparent 50.6%)}
+.env::before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(to bottom,#e5d6b5 0,transparent 55%);clip-path:polygon(0 0,100% 0,50% 58%)}
+.stamp{position:absolute;right:12px;top:12px;width:54px;height:64px;background:#fff;padding:5px;box-shadow:0 1px 3px rgba(0,0,0,.25);
+  -webkit-mask:radial-gradient(circle 3px at 50% 0,#0000 98%,#000) top/6px 51% repeat-x;}
+.stamp i{display:block;width:100%;height:100%;background:linear-gradient(160deg,#c9604a,#a8472f);position:relative}
+.stamp i::after{content:"";position:absolute;left:50%;top:48%;width:18px;height:18px;border-radius:50%;background:#fbe9c9;transform:translate(-50%,-50%)}
+.addr{position:absolute;left:22px;bottom:20px;font-family:var(--hand);font-size:15px;color:#4a4033;line-height:1.5}
+.sheet{position:absolute;left:12%;top:0;width:70%;height:250px;background:#fffefa;border-radius:3px;box-shadow:0 6px 14px rgba(80,60,30,.2);transform:rotate(-3deg);
+  padding:20px 18px;font-family:var(--hand);font-size:15px;color:#3a332b;line-height:26px;
+  background-image:repeating-linear-gradient(transparent 0 25px,#bcd0e6 25px 26px);background-position:0 18px}
+.photo{position:absolute;right:-14px;bottom:10px;width:74px;height:56px;background:#fff;padding:4px 4px 10px;box-shadow:0 1px 2px rgba(0,0,0,.2),0 4px 9px rgba(60,40,20,.28);transform:rotate(6deg)}
+.photo svg,.lp svg{display:block;width:100%;height:100%}
+/* steps */
+.steps{display:grid;gap:18px;counter-reset:s}
+.step{background:#fffdf7;border:1.5px solid var(--line);border-radius:14px;padding:22px 20px 20px;position:relative}
+.step .n{position:absolute;top:-16px;left:18px;width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;font-family:var(--serif);font-weight:700;display:grid;place-items:center;font-size:18px}
+.step svg{width:100%;height:92px;display:block;margin-bottom:6px}
+.step h3{font-size:19px;margin-bottom:4px}
+.step p{margin:0;color:var(--sub);font-size:16px;line-height:1.8}
+/* contents */
+.two{display:grid;gap:26px;align-items:center}
+.list{list-style:none;padding:0;margin:0}
+.list li{padding:12px 0 12px 38px;border-bottom:1px dashed var(--line);position:relative}
+.list li::before{content:"";position:absolute;left:4px;top:19px;width:22px;height:15px;background:#efe3c8;border:1.5px solid #bda877;border-radius:2px}
+.list li b{font-family:var(--serif)}
+.form-paper{background:#fffefa;border:1px solid var(--line);border-radius:6px;box-shadow:0 8px 20px rgba(80,60,30,.15);padding:20px 18px 22px;transform:rotate(.6deg);
+  background-image:repeating-linear-gradient(transparent 0 33px,#e3ecf5 33px 34px);font-family:var(--hand);max-width:420px;margin:0 auto;width:100%}
+.form-paper h4{margin:0 0 8px;font-family:var(--serif);font-size:18px;border-bottom:2px solid var(--accent);display:inline-block}
+.q{font-size:17px;color:#3a332b;margin:10px 0 0}
+.a{font-size:19px;color:#2b4a7a;margin:0 0 4px 14px;line-height:34px;transform:rotate(-.8deg)}
+.chk{display:flex;gap:14px;flex-wrap:wrap;font-size:17px;margin:4px 0 0;line-height:34px}
+.box{display:inline-block;width:20px;height:20px;border:2px solid #4a4033;vertical-align:-3px;margin-right:4px;position:relative}
+.box.on::after{content:"✓";position:absolute;left:1px;top:-8px;font-size:24px;color:#2b4a7a}
+.cap{font-family:var(--sans);font-size:13px;color:var(--sub);text-align:center;margin-top:10px;line-height:1.6}
+.say{margin:26px auto 0;max-width:640px;background:#fffdf7;border:1.5px dashed var(--accent);border-radius:12px;padding:14px 18px;font-size:16px;line-height:1.8}
+.pair{position:relative;max-width:420px;margin:0 auto;width:100%;padding:6px 0 10px}
+.letter{width:88%;background:#fffefb;border:1px solid #e6dcc6;border-radius:2px;padding:20px 20px 16px;transform:rotate(-1.6deg);
+  box-shadow:0 1px 1px rgba(80,60,30,.12),0 10px 22px rgba(80,60,30,.2);font-family:var(--serif);font-size:14.5px;line-height:1.95;color:#2b2722;
+  background-image:linear-gradient(90deg,transparent 0 100%),radial-gradient(rgba(150,120,70,.05) 1px,transparent 1px);background-size:auto,5px 5px}
+.letter p{margin:0 0 8px;font-size:14.5px;line-height:1.95}
+.lh{display:flex;justify-content:space-between;font-size:12.5px;color:#6b6155;border-bottom:1px solid #cfc3a8;padding-bottom:4px;margin-bottom:10px}
+.lp{width:120px;height:92px;margin:6px 0 4px;background:#fff;padding:5px 5px 14px;box-shadow:0 1px 2px rgba(0,0,0,.2),0 5px 10px rgba(60,40,20,.28);transform:rotate(2deg)}
+.paper{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9 .35' numOctaves='3' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .45 0 0 0 0 .3 0 0 0 .55 -.2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E")}
+.sample{display:inline-block;font-family:var(--sans);font-size:11.5px;color:#6b6155;border:1px solid #cfc3a8;border-radius:99px;padding:0 9px;margin:0 0 6px;background:#fffdf7;line-height:1.6}
+.reply+.reply{margin-top:-8px;margin-left:4%;transform:rotate(-.9deg)}
+.a:nth-of-type(2n){transform:rotate(.5deg);letter-spacing:.02em}
+.a:nth-of-type(3n){opacity:.92;margin-left:18px}
+.pts{list-style:none;margin:0 0 14px;padding:0;font-size:15.5px;line-height:1.7;color:var(--ink)}
+.pts li{padding-left:22px;position:relative;margin-bottom:4px}
+.pts li::before{content:"";position:absolute;left:2px;top:.62em;width:10px;height:7px;border-left:2.5px solid var(--green);border-bottom:2.5px solid var(--green);transform:rotate(-45deg)}
+.flow{max-width:600px;margin:0 auto 20px}
+.lsign{text-align:right;font-size:15px!important;margin:4px 0 0!important}
+.reply{width:88%;margin:-14px 0 0 12%;background:#fffdf6;border:1px solid #e3d8bf;border-radius:2px;padding:18px 18px 16px;transform:rotate(1.2deg);
+  box-shadow:0 1px 1px rgba(80,60,30,.12),0 10px 22px rgba(80,60,30,.22);
+  background-image:repeating-linear-gradient(transparent 0 33px,#e3ecf5 33px 34px);font-family:var(--hand);position:relative}
+.reply h4{margin:0 0 8px;font-family:var(--serif);font-size:17px;border-bottom:2px solid var(--accent);display:inline-block}
+/* parent flow */
+.pflow{list-style:none;margin:16px auto 0;padding:0;max-width:960px;display:grid;gap:22px}
+.pflow li{display:flex;align-items:center;gap:14px;background:#fffdf7;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;position:relative}
+.pflow li:not(:last-child)::after{content:"";position:absolute;left:50%;bottom:-16px;width:12px;height:12px;border-right:3px solid var(--accent);border-bottom:3px solid var(--accent);transform:translateX(-50%) rotate(45deg)}
+.pflow svg{width:64px;height:56px;flex:none}
+.pflow b{display:block;font-family:var(--serif);font-size:18px;line-height:1.5}
+.pflow span{display:block;font-size:15px;color:var(--sub);line-height:1.6}
+.cond{list-style:none;margin:0 auto 16px;padding:0;display:grid;gap:12px}
+.cond li{display:flex;gap:14px;align-items:center;background:#fffdf7;border:1.5px solid var(--line);border-radius:14px;padding:14px}
+.cond .num{flex:none;width:64px;height:64px;border-radius:50%;background:var(--accent);color:#fff;font-family:var(--serif);font-weight:700;font-size:19px;display:grid;place-items:center}
+.cond li div{line-height:1.7;font-size:16.5px}
+@media(min-width:760px){.pflow{grid-template-columns:repeat(4,1fr);gap:26px}.pflow li{flex-direction:column;text-align:center}.pflow li:not(:last-child)::after{left:auto;right:-20px;bottom:auto;top:50%;transform:translateY(-50%) rotate(-45deg)}}
+/* price */
+.plans{display:grid;gap:16px;max-width:640px;margin:0 auto}
+.plan{background:#fffdf7;border:2px solid var(--line);border-radius:16px;padding:22px;text-align:center}
+.plan.main{border-color:var(--accent)}
+.plan h3{font-size:19px}
+.plan .yen{font-family:var(--serif);font-size:38px;font-weight:700;color:var(--accent-d);line-height:1.4}
+.plan .yen small{font-size:15px;color:var(--sub);font-weight:500}
+.plan ul{text-align:left;margin:10px auto 0;padding-left:1.3em;font-size:16px;max-width:300px}
+/* faq */
+details{background:#fffdf7;border:1.5px solid var(--line);border-radius:12px;margin-bottom:12px}
+summary{cursor:pointer;padding:16px 46px 16px 18px;font-weight:700;list-style:none;position:relative;min-height:56px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";position:absolute;right:16px;top:14px;font-size:20px;color:var(--accent)}
+details[open] summary::after{content:"－"}
+details p{margin:0;padding:0 18px 18px;color:var(--sub)}
+/* form */
+.band{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+form{background:#fffefa;border:1px solid var(--line);border-radius:16px;padding:24px 18px;max-width:600px;margin:0 auto;box-shadow:0 8px 24px rgba(80,60,30,.12)}
+.f{margin-bottom:20px}
+label.t,.f legend{display:block;font-weight:700;margin-bottom:6px;font-size:17px;padding:0}
+fieldset{border:0;margin:0 0 20px;padding:0}
+.req{background:var(--accent);color:#fff;font-size:12px;padding:1px 8px;border-radius:99px;margin-left:6px;vertical-align:2px}
+.opt{background:#9a9082;color:#fff;font-size:12px;padding:1px 8px;border-radius:99px;margin-left:6px;vertical-align:2px}
+input[type=email],select,textarea{width:100%;font:inherit;font-size:17px;padding:13px 12px;border:1.5px solid #a89c85;border-radius:10px;background:#fff;color:var(--ink);min-height:52px}
+textarea{min-height:100px}
+input:focus,select:focus,textarea:focus{outline:3px solid #f1b9a8;border-color:var(--accent)}
+.radio{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1.5px solid var(--line);border-radius:10px;margin-bottom:8px;background:#fff;cursor:pointer;line-height:1.6}
+.radio input,.agree input{width:24px;height:24px;flex:none;margin:2px 0 0;accent-color:var(--accent)}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:16px;line-height:1.7}
+.done{display:none;background:#eef5ee;border:1px solid #9bbf9b;border-radius:12px;padding:16px;margin-top:16px}
+.hint{font-size:14px;color:var(--sub);margin:4px 0 0;line-height:1.6}
+footer{background:#2f2a24;color:#e8e0d0;padding:36px 0 44px;font-size:15px;line-height:1.8}
+footer a{color:#f3d9a8}
+footer .svc{font-family:var(--serif);font-size:19px;color:#fff}
+@media(min-width:760px){
+  body{font-size:18px}
+  .hero .grid{grid-template-columns:1.15fr 1fr;align-items:center}
+  .hero h1{font-size:38px}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .two{grid-template-columns:1fr 1fr}
+  .plans{grid-template-columns:1fr 1fr;max-width:760px}
+  .btn{display:inline-block;width:auto;min-width:300px}
+  section h2{font-size:30px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">
+      <svg viewBox="0 0 30 22" aria-hidden="true"><rect x="1" y="1" width="28" height="20" rx="2" fill="#efe3c8" stroke="#a8472f" stroke-width="1.5"/><path d="M1 2l14 11L29 2" fill="none" stroke="#a8472f" stroke-width="1.5"/></svg>
+      <span class="svc">おてがみ往復便</span>
+    </a>
+    <span class="badge">開発中</span>
+  </div>
+</header>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fb9e0"/><stop offset=".7" stop-color="#d8e8f0"/><stop offset="1" stop-color="#f6e6c8"/></linearGradient>
+  <linearGradient id="hillA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9dc084"/><stop offset="1" stop-color="#6f9a5f"/></linearGradient>
+  <linearGradient id="hillB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fae6c"/><stop offset="1" stop-color="#4f7f48"/></linearGradient>
+  <radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff8dc"/><stop offset=".5" stop-color="#fff3c4" stop-opacity=".8"/><stop offset="1" stop-color="#fff3c4" stop-opacity="0"/></radialGradient>
+  <symbol id="land" viewBox="0 0 120 90"><rect width="120" height="90" fill="url(#sky)"/><circle cx="88" cy="26" r="22" fill="url(#sun)"/>
+    <ellipse cx="30" cy="22" rx="20" ry="4.5" fill="#fff" opacity=".75"/><ellipse cx="44" cy="26" rx="14" ry="3.5" fill="#fff" opacity=".6"/>
+    <path d="M0 56 Q30 40 60 54 T120 50 V90 H0Z" fill="url(#hillA)"/><path d="M0 68 Q40 56 80 68 T120 64 V90 H0Z" fill="url(#hillB)"/>
+    <path d="M78 90 Q92 74 100 66" stroke="#e9dcb4" stroke-width="5" fill="none" opacity=".8"/>
+    <circle cx="22" cy="62" r="7" fill="#4a7a43"/><rect x="21" y="62" width="2" height="8" fill="#6b5236"/>
+    <rect width="120" height="90" fill="#000" opacity=".04"/></symbol>
+</defs></svg>
+<main id="top">
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="wrap">
+<!-- LP-1 -->
+    <div class="grid">
+      <div>
+        <span class="eyebrow">開発中｜無料のお試しキットを配布中</span>
+        <h1><span class="svc ph">おてがみ往復便</span><br><span class="ph">書いて送るだけで、</span><br><span class="ph">親から</span><span class="ph">手書きの</span><span class="ph">返事が届く</span></h1>
+        <p style="font-size:19px;font-weight:700;color:var(--accent-d);margin-bottom:12px">親御さんはスマホ不要。返事を書いて、ポストに入れるだけ。</p>
+        <ul class="pts">
+          <li>あなたは近況を書いて送るだけ（写真つきプランは写真も）。印刷から郵送まで、こちらで行います</li>
+          <li>まずは、印刷して使える無料のお試しキットで、手紙と返事のやりとりを試せます</li>
+        </ul>
+        <p class="addrline"><b>親御さんの住所の扱い：</b>用途は手紙の郵送だけです。広告など郵便以外には使いません。写真と文面は発送から30日で、住所は解約または最後の発送から30日で削除します。</p>
+        <a class="btn" href="#kit" style="margin-top:8px">お試しキットを受け取る（無料・登録不要）</a>
+        <a class="btn2" href="#signup">サービス開始のお知らせを受け取る（事前登録）</a>
+        <p class="note">いまは開発中で、有料のお申し込み・お支払いはできません。料金（予定）は<a href="#price">料金の節</a>に、開始の条件は<a href="#when">「いつ始まるか」</a>にまとめています。</p>
+      </div>
+      <div class="stage" aria-label="便せんと返信用封筒のイメージ図">
+        <div class="sheet paper"><span style="display:block;font-size:11px;opacity:.7">イメージ（架空の文例）</span>お母さん、元気にしてる？<br>先週、家族で<br>公園に行きました。<br>写真を入れるね。<div class="photo"><svg viewBox="0 0 120 90" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#land"/></svg></div></div>
+        <div class="env"><div class="stamp"><i></i></div><div class="addr">〒000-0000<br>（お子さまの住所）</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 親の側の流れ -->
+<section id="parent" style="padding:8px 0 28px">
+  <div class="wrap">
+<!-- LP-1 -->
+    <h2 style="font-size:22px">親御さんの側は、<span class="ph">この4段だけ</span></h2>
+    <ol class="pflow">
+      <li><svg viewBox="0 0 64 56" aria-hidden="true"><rect x="22" y="8" width="6" height="44" fill="#8a7f70"/><rect x="10" y="8" width="30" height="20" rx="4" fill="#a8472f"/><rect x="16" y="14" width="18" height="4" rx="2" fill="#5b2312"/><rect x="38" y="30" width="22" height="14" rx="2" fill="#efe3c8" stroke="#a8472f" stroke-width="1.5"/><path d="M38 31l11 7 11-7" fill="none" stroke="#a8472f" stroke-width="1.5"/></svg><div><b>1　ポストに届く</b><span>お子さまからの手紙が、郵便で届きます</span></div></li>
+      <li><svg viewBox="0 0 64 56" aria-hidden="true"><rect x="8" y="24" width="48" height="28" rx="3" fill="#efe3c8" stroke="#a8472f" stroke-width="2"/><path d="M8 26L32 6l24 20" fill="#f6ecd5" stroke="#a8472f" stroke-width="2"/><rect x="18" y="14" width="28" height="22" fill="#fffefa" stroke="#bda877"/><path d="M22 20h20M22 26h20" stroke="#9fb8d6" stroke-width="2"/></svg><div><b>2　開ける</b><span>便せんと、返信用の紙・封筒が入っています</span></div></li>
+      <li><svg viewBox="0 0 64 56" aria-hidden="true"><rect x="12" y="6" width="38" height="46" fill="#fffefa" stroke="#5b5247" stroke-width="2"/><path d="M18 16h26M18 26h26M18 36h16" stroke="#9fb8d6" stroke-width="2"/><rect x="21" y="40" width="9" height="9" fill="none" stroke="#4a4033" stroke-width="1.8"/><path d="M23 44l2 3 4-6" stroke="#2b4a7a" stroke-width="2" fill="none"/><path d="M44 50l14-30 4 2-14 30-6 2z" fill="#a8472f"/></svg><div><b>3　返信用紙に書く</b><span>チェック欄に印をつけるだけでも返事になります</span></div></li>
+      <li><svg viewBox="0 0 64 56" aria-hidden="true"><rect x="6" y="18" width="44" height="30" rx="3" fill="#efe3c8" stroke="#a8472f" stroke-width="2"/><path d="M6 20l22 15 22-15" fill="none" stroke="#a8472f" stroke-width="2"/><rect x="38" y="22" width="9" height="11" fill="#c9604a"/><path d="M54 6v22m0 0l-6-7m6 7l6-7" stroke="#3f6b52" stroke-width="3" fill="none"/></svg><div><b>4　投函する</b><span>切手つき・宛先印字ずみ。ポストに入れるだけです</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 状況 -->
+<section style="padding:0 0 10px">
+  <div class="wrap">
+    <div class="status"><b>現在の状況：</b>開発中で、サービス開始前です。いまできるのは、<b>無料のお試しキットの受け取り</b>と、<b>開始のお知らせの事前登録</b>だけです。開始の条件は<a href="#when">「いつ始まるか」</a>に書いています。</div>
+  </div>
+</section>
+
+<!-- お試しキット -->
+<section class="band" id="kit">
+  <div class="wrap">
+    <h2>無料のお試しキット</h2>
+    <p class="lead">手紙と返事のやりとりを、いま手作りで試せる PDF（A4・4ページ）です。家庭のプリンターで、白黒印刷でも使えます。</p>
+    <div class="kitbox">
+      <ul class="kitlist">
+        <li><span class="num">1</span><b>使い方の手順</b><br>用意する物、4つの手順、書き出しの例（架空の文例）が1枚にまとまっています。</li>
+        <li><span class="num">2</span><b>便せんと、親が書く返信用紙</b><br>広めの罫線の便せんと、大きな字で書ける返信用紙です。返信用紙は「お返事はひとことで大丈夫です」から始まり、○をつける問いと短く書く欄があります。</li>
+        <li><span class="num">3</span><b>返信用封筒の宛名ラベル</b><br>切り取って貼るラベル2枚分と、切手を貼る位置の説明つきです。</li>
+      </ul>
+      <p style="text-align:center;margin:0"><a class="btn" id="kitbtn" href="kit/otegami-kit.pdf" download="otegami-kit.pdf">お試しキット（PDF）をダウンロード</a></p>
+      <p class="note" style="text-align:center"><b>メールアドレスは要りません。</b>費用は切手代だけです（往復で2枚。定形50gまで110円・2026年11月時点。料金は郵便局でご確認ください）。封筒（長形3号を2枚＝外封筒と、半分に折って同封する返信用封筒）はご自身でご用意ください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 仕組み -->
+<section id="how">
+  <div class="wrap">
+<!-- LP-2 -->
+    <h2>仕組みは、3つのステップ</h2>
+    <p class="lead"><b>なぜ手紙なのか：</b>電話は時間を合わせる必要があり、メッセージアプリは親御さんが使えないことがあります。手紙なら、親御さんは自分の時間に書いて、投函するだけです。</p>
+    <div class="steps">
+      <div class="step"><span class="n">1</span>
+        <svg viewBox="0 0 200 92" aria-hidden="true"><rect x="62" y="6" width="76" height="80" rx="10" fill="#fff" stroke="#5b5247" stroke-width="2.5"/><rect x="70" y="18" width="60" height="5" fill="#d9cdb3"/><rect x="70" y="30" width="60" height="5" fill="#d9cdb3"/><rect x="70" y="42" width="38" height="5" fill="#d9cdb3"/><rect x="72" y="56" width="26" height="20" fill="#9fb8d6"/><rect x="102" y="56" width="26" height="20" fill="#9bbf8a"/></svg>
+        <h3>文面を書く（写真も選べます）</h3><p>スマホかパソコンで、近況の文面を書きます。写真つきプランでは、写真を1枚選びます。文面はご本人が書きます。AI おまかせを付けると、AI の質問に答えるだけで文章の形になります（最後はご本人が確かめます）。人による代筆はしません。</p></div>
+      <div class="step"><span class="n">2</span>
+        <svg viewBox="0 0 200 92" aria-hidden="true"><rect x="30" y="22" width="90" height="62" rx="3" fill="#efe3c8" stroke="#a8472f" stroke-width="2"/><path d="M30 24l45 32 45-32" fill="none" stroke="#a8472f" stroke-width="2"/><rect x="120" y="10" width="52" height="70" fill="#fffefa" stroke="#5b5247" stroke-width="2" transform="rotate(8 146 45)"/><g stroke="#9fb8d6" stroke-width="2" transform="rotate(8 146 45)"><path d="M126 26h40M126 36h40M126 46h40M126 56h40"/></g></svg>
+        <h3>便せんに印刷して、郵送</h3><p>こちらで便せんに印刷し、返信用封筒（お子さまの住所を印字・切手貼付済み）と返信用紙を同封してお送りします。差出人は、お申し込みのお子さまのお名前で届きます。</p></div>
+      <div class="step"><span class="n">3</span>
+        <svg viewBox="0 0 200 92" aria-hidden="true"><path d="M20 80V30l40-20h80l40 20v50z" fill="#efe3c8" stroke="#5b5247" stroke-width="2"/><rect x="80" y="40" width="40" height="8" rx="2" fill="#a8472f"/><path d="M100 4v30m0 0l-10-10m10 10l10-10" stroke="#a8472f" stroke-width="3" fill="none"/></svg>
+        <h3>親は書いて、投函するだけ</h3><p>親御さんはスマホもパソコンも要りません。書いてポストに入れるだけ。返事はお子さまの家に直接届きます。こちらは返事を受け取らず、開けることもありません。</p></div>
+    </div>
+    <div class="say"><b>親御さんへ、電話で伝える一言の例</b><br>「今月から私の手紙が届くよ。返事は入っている封筒で出してね」</div>
+  </div>
+</section>
+
+<!-- 同封するもの -->
+<section class="band" id="contents">
+  <div class="wrap">
+<!-- LP-3 -->
+    <h2>お届けするもの</h2>
+    <p class="lead">親御さんの手元に、これだけが届きます。</p>
+    <div class="two">
+      <ul class="list">
+        <li><b>お子さまの手紙</b>：文面（写真つきプランは写真1枚も）を、便せんに印刷します</li>
+        <li><b>返信用封筒</b>：お子さまの住所を印字し、切手を貼ってあります</li>
+        <li><b>返信用紙</b>：大きな字で、質問とチェック欄つき。書き出しに迷いません</li>
+      </ul>
+      <div>
+        <div class="pair" role="img" aria-label="便せんと、手書きの返事が書かれた返信用紙のイメージ">
+          <div class="letter paper">
+            <span class="sample">文例（架空）</span>
+            <div class="lh"><span>花子より</span><span>7月12日</span></div>
+            <p>お母さん、お元気ですか。<br>先週の日曜日、家族で近くの公園へ行きました。子どもたちが大はしゃぎで、帰りの車ではぐっすりでした。</p>
+            <p>写真を入れますね。そちらは、あじさいが咲いた頃でしょうか。</p>
+            <div class="lp"><svg viewBox="0 0 120 90" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#land"/></svg></div>
+            <p class="lsign">花子</p>
+          </div>
+          <div class="reply paper">
+            <span class="sample">例1：短い返事（架空の文例）</span><br>
+            <h4>おへんじ用紙</h4>
+            <p class="q">① 最近の調子</p>
+            <div class="chk"><span><i class="box on"></i>元気</span><span><i class="box"></i>まあまあ</span><span><i class="box"></i>疲れ気味</span></div>
+            <p class="q">② 次のお手紙で知りたいこと</p>
+            <div class="chk"><span><i class="box on"></i>孫の話</span><span><i class="box on"></i>写真</span></div>
+          </div>
+          <div class="reply paper">
+            <span class="sample">例2：少し長い返事（架空の文例）</span><br>
+            <h4>おへんじ用紙</h4>
+            <p class="q">① 最近うれしかったこと</p>
+            <p class="a">庭のあじさいが咲きました。</p>
+            <p class="q">② 今週食べておいしかったもの</p>
+            <p class="a">となりからもらった桃。</p>
+            <p class="q">③ 次のお手紙で知りたいこと</p>
+            <div class="chk"><span><i class="box on"></i>孫の話</span><span><i class="box"></i>仕事の話</span><span><i class="box on"></i>写真</span></div>
+          </div>
+        </div>
+        <p class="cap">上：お子さまの手紙（便せん）／下：親御さんの返事（返信用紙）の2つの例<br>文面・回答・写真はすべて架空の例です</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 料金 -->
+<section id="price">
+  <div class="wrap">
+    <h2>料金（予定）</h2>
+    <p class="lead" style="margin-bottom:10px"><b>いまは有料のお申し込みはできません。開始前に必ず料金を再確認します。</b></p>
+    <p class="lead">下の金額はすべて税込の予定価格です。便せん・封筒・切手（往復）込みで、返信用封筒・返信用紙つきです。</p>
+    <table class="ptable">
+      <thead><tr><th>内容</th><th>月2通</th><th>1通だけ</th></tr></thead>
+      <tbody>
+        <tr><td><b style="font-size:16px">定型文</b><small>用意した文例から選び、近況を書き足して印刷</small></td><td><b>980円</b></td><td><b>600円</b></td></tr>
+        <tr><td><b style="font-size:16px">写真つき・手書き画像の取り込み</b><small>写真1枚を便せんに印刷／ご自身の手書きの画像を取り込んで印刷／<b>手書き風の書体で印刷（手書きではなく印刷です）</b></small></td><td><b>1,180円</b></td><td><b>700円</b></td></tr>
+        <tr><td><b style="font-size:16px">AI おまかせ（追加）</b><small>AI が質問して文章の形にします。最後はご本人が確かめてから発送します</small></td><td colspan="2"><b>1通につき +100円</b></td></tr>
+      </tbody>
+    </table>
+    <p class="note" style="max-width:760px;margin:10px auto 0;text-align:center">すべて税込・予定価格。手紙は印刷してお届けします。文面はご本人が書くか、AI おまかせで質問に答えて作ります（人による代筆はしません）。</p>
+    <div class="status" style="max-width:640px;margin:20px auto 0;text-align:left"><b>お支払いと解約（予定）：</b>開始時は前払いの予約から始めます。開始前・発送前なら全額返金します。解約はメールでいつでもでき、縛りはありません。いまはお支払いは発生しません。</div>
+    <div style="max-width:640px;margin:22px auto 0"><a class="btn" href="#kit" style="display:block;width:100%">お試しキットを受け取る（無料・登録不要）</a>
+      <p class="note" style="text-align:center"><a href="#signup">サービス開始のお知らせを受け取る（事前登録）</a>　料金は開始前にメールで再確認します。</p></div>
+    <p class="note" style="max-width:640px;margin:14px auto 0;text-align:center">運営：cocreturn が運営する個人の小さな事業です。連絡は <a href="mailto:info@cocreturn.com">info@cocreturn.com</a>。特定商取引法に基づく表示は、有料の受付を始める前に掲載します（いまは有料の受付をしていないため）。</p>
+  </div>
+</section>
+
+<!-- いつ始まるか -->
+<section class="band" id="when">
+  <div class="wrap" style="max-width:720px">
+<!-- LP-6 -->
+    <h2>いつ始まるか</h2>
+    <p class="lead">開始の日付は決めていません。代わりに、始まる条件を数字でお示しします。</p>
+    <ol class="cond">
+      <li><span class="num">5件</span><div><b>無料の事前登録が5件に届いたら</b>、前払いの予約のご案内をお送りします。</div></li>
+      <li><span class="num">3件</span><div><b>前払いの予約が3件そろった時点で</b>受付を始めます。それまでお金はいただきません。</div></li>
+      <li><span class="num">確認</span><div><b>始まる前に、料金と内容をメールで必ず再確認します。</b>確かめてから決められます。</div></li>
+    </ol>
+    <p class="note" style="text-align:center">条件に届かない場合は、始めません。その場合も、登録しただけで料金はかかりません。</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap" style="max-width:720px">
+<!-- LP-5 -->
+    <h2>よくある質問</h2>
+    <p class="lead"></p>
+    <details><summary>返事は誰が受け取りますか？</summary><p>お子さまのご自宅に直接届きます。返信用封筒にはお子さまの住所を印字してありますので、こちらが返事を受け取ったり、開けたりすることはありません。</p></details>
+    <details><summary>親御さんの住所と写真は、どう扱われますか？</summary><p>住所と写真は、手紙の印刷と発送のためだけに使い、郵便以外の目的には使いません。法令に基づく場合を除き、印刷・郵送に必要な委託先以外には渡しません。住所はご利用のお申し込み時にお子さまからお預かりする予定で、事前登録やお試しキットの段階ではお尋ねしません。写真と文面は発送から30日で、住所は解約または最後の発送から30日で削除します。取り扱いは<a href="privacy.html">プライバシーポリシー</a>に定めます。</p></details>
+    <details><summary>写真は何枚まで入れられますか？</summary><p>写真つきプランでは、1通につき1枚です。便せんに印刷してお送りします。</p></details>
+    <details><summary>返事が来ない月もありますか？</summary><p>あります。親御さんのご都合やお体調によって、お返事が難しい月もあるでしょう。このサービスは、無理のない文通を大切にしています。返事がなくても、お手紙が届くこと自体を楽しんでいただければと考えています。返事が来ない月も、料金は同じです（返事の有無で料金は変わりません）。催促の手紙は送りません。</p></details>
+    <details><summary>手紙は、投函してからどのくらいで届きますか？</summary><p>普通郵便の目安では、投函から通常2〜4日程度です。ただし、天候や地域、年末年始などで前後します。お届け日の約束はできません。</p></details>
+    <details><summary>親に先に伝えておいたほうがいいですか？</summary><p>はい、電話でひと言伝えておくのがおすすめです。「今月から私の手紙が届くよ。返事は入っている封筒で出してね」と話しておくと、親御さんも安心して受け取れます。</p></details>
+    <details><summary>親が字を書くのがむずかしいときは？</summary><p>ご家族やまわりの方が代わりに書いても大丈夫です。また、返信用紙のチェック欄に印をつけるだけでも、立派な返事になります。</p></details>
+    <details><summary>いつ始まりますか？</summary><p>日付は決まっていません。事前登録が5件に届いたら前払い予約のご案内をお送りし、予約が3件そろった時点で受付を始めます。くわしくは<a href="#when">「いつ始まるか」</a>をご覧ください。</p></details>
+  </div>
+</section>
+
+<!-- いま登録する理由 -->
+<section id="why" style="padding-bottom:0">
+  <div class="wrap" style="max-width:640px">
+<!-- LP-6 -->
+    <h2>いま登録する理由</h2>
+    <ul class="pts" style="font-size:17px">
+      <li><b>開始のお知らせを、最初に</b>お届けします。</li>
+      <li>開始前に、<b>料金と条件をメールでお伝え</b>します。確かめてから決められます。登録しただけで料金はかからず、自動で申し込みにもなりません。</li>
+      <li>やめたいときは、<b>1通のメールでいつでも登録を消せます</b>。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 登録フォーム -->
+<section id="signup">
+  <div class="wrap">
+    <h2>開始のお知らせ（事前登録）</h2>
+    <p class="lead">お試しキットに登録は要りません。サービスが始まったときにお知らせを受け取りたい方は、こちらからどうぞ。無料で、お支払いは発生しません。</p>
+    <div class="status flow"><b>登録のあとの流れ</b><br>① 確認メールは自動では送りません。<br>② 事前登録が5件に届いたら、前払いの予約のご案内をお送りします。<br>③ 予約が3件そろった時点で受付を始めます。始まる前に、料金と内容をメールで再確認します。<br>④ 始まらなかった場合は、メールでお知らせして登録を消します。<br>⑤ 送るのは、これらのメールだけです（お知らせメールを選んだ方には、お知らせメールもお送りします）。</div>
+    <form id="f" novalidate>
+      <div class="f"><label class="t" for="em">メールアドレス<span class="req">必須</span></label>
+        <input id="em" type="email" inputmode="email" autocomplete="email" placeholder="example@example.com" required></div>
+      <div class="f"><label class="agree"><input type="checkbox" id="ag" required><span><a href="privacy.html">プライバシーポリシー</a>に同意します<span class="req">必須</span></span></label></div>
+      <div class="f"><label class="agree"><input type="checkbox" id="optin"><span>お知らせメール（新しい文例・季節のおすすめ・サービスのご案内）も受け取る（任意・いつでも止められます）</span></label></div>
+      <details class="intent f"><summary>始まったら使いたいですか？（任意・開いて答える）</summary>
+        <label class="radio"><input type="radio" name="intent" value="使いたい">使いたい</label>
+        <label class="radio"><input type="radio" name="intent" value="料金しだい">料金しだい</label>
+        <label class="radio"><input type="radio" name="intent" value="まだ分からない">まだ分からない</label>
+      </details>
+      <button class="btn" type="submit" id="sbtn">事前登録する（無料）</button>
+      <div class="done" id="err" role="alert" style="background:#fdeeea;border-color:#d99a8a"></div>
+      <div class="done" id="done" role="status"><b>受け付けました。</b>ありがとうございます。サービスの開始に関するご案内を、ご登録のメールアドレスへお送りします。</div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="svc">おてがみ往復便</div>
+    <p>運営：cocreturn（ココリターン）が運営する個人の小さな事業です。<br>連絡は <a href="mailto:info@cocreturn.com">info@cocreturn.com</a><br><span style="font-size:13px;opacity:.85">特定商取引法に基づく表示は、有料の受付を始める前に掲載します（いまは有料の受付をしていないため）。</span></p>
+    <p><a href="privacy.html">プライバシーポリシー</a></p>
+    <p style="font-size:13px;opacity:.75">現在は開発中で、サービス開始前です。内容・料金は変更になることがあります。</p>
+  </div>
+</footer>
+
+<script>
+// 登録フォーム（Google フォーム）。実際の値は後で入れる。TODO のあいだは送信を止める
+var FORM='https://docs.google.com/forms/d/e/1FAIpQLSfYFhrss0Sh_fA7aZ7J9HfGAJB8uTIbsCSzbtUeKiAN2l7CzA/formResponse';          // 例：https://docs.google.com/forms/d/e/xxxx/formResponse
+var ENTRY_EMAIL='entry.1819712079';   // 例：entry.123456789
+var ENTRY_OPTIN='entry.52337240';
+var ENTRY_INTENT='entry.1265738552';
+(function(){
+  var f=document.getElementById('f');
+  function show(id,msg){var e=document.getElementById(id);if(msg)e.textContent=msg;e.style.display='block';}
+  f.onsubmit=function(e){
+    e.preventDefault();
+    document.getElementById('err').style.display='none';
+    var em=document.getElementById('em');em.value=em.value.replace(/[\s\u3000]/g,'');
+    if(!em.checkValidity()||!em.value){em.reportValidity();return;}
+    if(!document.getElementById('ag').checked){show('err','プライバシーポリシーへの同意にチェックをお願いします。');return;}
+    if(FORM==='TODO'){show('err','現在、登録の受付の準備中です（送信先が未設定）。しばらくしてからお試しください。');return;}
+    var b=document.getElementById('sbtn');b.disabled=true;
+    var d=new URLSearchParams();
+    d.append(ENTRY_EMAIL,em.value);
+    if(document.getElementById('optin').checked)d.append(ENTRY_OPTIN,'受け取る');
+    var r=f.querySelector('input[name="intent"]:checked');if(r)d.append(ENTRY_INTENT,r.value);
+    fetch(FORM,{method:'POST',mode:'no-cors',body:d}).then(function(){
+      b.style.display='none';show('done');document.getElementById('done').scrollIntoView({behavior:'smooth',block:'center'});
+    }).catch(function(){b.disabled=false;show('err','送信できませんでした。通信状況をご確認のうえ、もう一度お試しください。');});
+  };
+  document.getElementById('kitbtn').addEventListener('click',function(){
+    try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:'kit-download',title:'kit',event:true});}catch(e){}
+  });
+})();
+</script>
+<script>if(location.hash==='#toggle-goatcounter'){try{if(localStorage.getItem('skipgc')==='t'){localStorage.removeItem('skipgc');alert('この端末の訪問を、また数えるようにしました')}else{localStorage.setItem('skipgc','t');alert('この端末の訪問は、今後数えません')}}catch(e){alert('この端末では設定できませんでした')}}</script>
+<script>try{if(localStorage.getItem('skipgc')!=='t'){var s=document.createElement('script');s.async=true;s.src='https://gc.zgo.at/count.js';s.setAttribute('data-goatcounter','https://otegami.goatcounter.com/count');document.body.appendChild(s)}}catch(e){}</script>
+</body>
+</html>
